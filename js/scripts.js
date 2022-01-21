@@ -23,4 +23,11 @@ function robotizeTheNumber (numInput) {
       return "Boop!";
     }
   }
+
+  //next, check and see if there are any 1s
+  for (i = 0; i < numArray.length; i++) {
+    if (parseInt(numArray[i]) === 1) {
+      return "Boop!";
+    }
+  }
 }
