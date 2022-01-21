@@ -44,6 +44,13 @@ Code:
 const userNum = "-2";  
 robotizeTheNumber(userNum);  
 Expected Output: false  
+  
+  
+Test: "It should return string "Won't you be my neighbor?" if number input contains a 3"  
+Code:  
+const userNum = "9587698357695879";  
+robotizeTheNumber(userNum);  
+Expected Output: "Won't you be my neighbor?"  
 
 ## Known Bugs
 
