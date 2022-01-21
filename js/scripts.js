@@ -12,7 +12,7 @@ function checkNumberPresence (fullNumber, numToFind) {
 // Business Logic
 function robotizeTheNumber (numInput) {
 
-  if ((isNaN(numInput)) || (parseInt(numInput) < 0)) {
+  if ((isNaN(numInput)) || (parseInt(numInput) < 0) || (numInput.length === 0)) {
     return false; //if not a valid number, or if num is less than 0
   }
   const robotStrings = ["0","Beep!","Boop","Won't you be my neighbor?"];
@@ -41,15 +41,22 @@ function robotizeTheNumber (numInput) {
 $(document).ready(function() {
 	$("form#ask-the-robot").submit(function(event) {
     event.preventDefault();
-    //$("#robot-paragraph").text($("input#user-input").val()+ ": " + robotizeTheNumber($("#user-input").val()));
-    // outputArray = robotizeTheNumber($("#user-input").val())
-    // console.log(outputArray);
-    // console.log(typeof(outputArray));
-    robotizeTheNumber($("#user-input").val()).forEach(function (numOut) {
-      $("#robot-paragraph").append(numOut + ", ").show('slow');
-    });
+    numArray = robotizeTheNumber($("#user-input").val());
 
-    $("#robot-head-img").attr("src", "../img/robot-talk.jpg");
+    if (numArray === false) {
+      console.log(numArray);
+      $("#robot-paragraph").html("Please enter a <b>number</b>, that is also <b>greater than 0</b>.").show('slow');
+    } else {
+      numArray.forEach(function (numOut, index) {
+        if (index < (numArray.length - 1)) {
+          $("#robot-paragraph").append(numOut + ", ").show('slow');
+        } else {
+          $("#robot-paragraph").append(numOut).show('slow');
+        }
+      });
+    }
+
+    $("#robot-head-img").attr("src", "img/robot-talk.jpg");
     $("#toggle-mouth").text("Close my mouth");
     $("#user-input").val("");
   });
@@ -58,7 +65,7 @@ $(document).ready(function() {
     $("#robot-head-img").attr("src", "img/robot-not-talking.png");
     $("#toggle-mouth").text("Open my mouth");    
     $("#robot-paragraph").hide( 1000 , function () {
-      $("#robot-paragraph").text("");
+      $("#robot-paragraph").text("s");
     });
   });
 
@@ -73,6 +80,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-//$("#language-suggestion-img").attr("src", "src here");
