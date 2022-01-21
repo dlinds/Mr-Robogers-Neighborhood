@@ -16,16 +16,16 @@ function robotizeTheNumber (numInput) {
     return false; //if not a valid number, or if num is less than 0
   }
   const robotStrings = ["0","Beep!","Boop","Won't you be my neighbor?"];
-  
+  let numCombo = [];
   for (x = 3; x > 0; x--) {
     if (checkNumberPresence(numInput, x)) {
-      return robotStrings[(x)]; //returns the corresponding string in robotStrings
+      numCombo.push(robotStrings[(x)])
+      return numCombo; //returns the corresponding string in robotStrings
     }
   }
 
   //if no 3, 2, or 1 is present, the below runs. It counts up from 0 to the number input, replacing 0, 1, 2, and 3 as it
   //counts with the corresponding string for each number from robotStrings[];
-  let numCombo = [];
   for (i = 0; i <= parseInt(numInput); i++) {
     if (robotStrings[i]) {
       numCombo.push(robotStrings[i]);
@@ -41,18 +41,34 @@ function robotizeTheNumber (numInput) {
 $(document).ready(function() {
 	$("form#ask-the-robot").submit(function(event) {
     event.preventDefault();
-    $("#robot-paragraph").text($("#user-input").val()+ ": " + robotizeTheNumber($("#user-input").val()));
+    //$("#robot-paragraph").text($("input#user-input").val()+ ": " + robotizeTheNumber($("#user-input").val()));
+    // outputArray = robotizeTheNumber($("#user-input").val())
+    // console.log(outputArray);
+    // console.log(typeof(outputArray));
+    robotizeTheNumber($("#user-input").val()).forEach(function (numOut) {
+      $("#robot-paragraph").append(numOut + ", ").show('slow');
+    });
+
     $("#robot-head-img").attr("src", "../img/robot-talk.jpg");
+    $("#toggle-mouth").text("Close my mouth");
     $("#user-input").val("");
   });
 
-  $("#toggle-mouth").click(function() {
-    if ($("#robot-head-img").attr("src") === "img/robot-not-talking.png") {
+  $("input#user-input").click(function() {
+    $("#robot-head-img").attr("src", "img/robot-not-talking.png");
+    $("#toggle-mouth").text("Open my mouth");    
+    $("#robot-paragraph").hide( 1000 , function () {
+      $("#robot-paragraph").text("");
+    });
+  });
+
+  $("div#toggle-mouth").click(function() {
+    if ($("#toggle-mouth").text() ==  "Open my mouth") {
       $("#robot-head-img").attr("src", "img/robot-talk.jpg");
-      $("#toggle-mouth").text("Close my Mouth");
-    } else if ($("#robot-head-img").attr("src") === "img/robot-talk.jpg") {
+      $("#toggle-mouth").text("Close my mouth");
+    } else if ($("#toggle-mouth").text() ==  "Close my mouth") {
       $("#robot-head-img").attr("src", "img/robot-not-talking.png");
-      $("#toggle-mouth").text("Open my Mouth");
+      $("#toggle-mouth").text("Open my mouth");
     }
   });
 
