@@ -65,7 +65,14 @@ Code:
 const userNum = "9587698576958719";  
 robotizeTheNumber(userNum);  
 Expected Output: "Beep!"  
- 
+  
+  
+Test: "It should return string "0" if number input is 0 and no 3, 2, 1 is present"  
+Code:  
+const userNum = "0";  
+robotizeTheNumber(userNum);  
+Expected Output: "0"  
+  
   
 #### Describe: checkNumberPresence()
 

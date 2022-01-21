@@ -12,12 +12,8 @@ function checkNumberPresence (fullNumber, numToFind) {
 // Business Logic
 function robotizeTheNumber (numInput) {
 
-  if (isNaN(numInput)) {
+  if ((isNaN(numInput)) || (parseInt(numInput) < 0)) {
     return false; //if not a valid number
-  }
-
-  if (parseInt(numInput) < 0) {
-    return false; //if less than 0, return false
   }
   
   const robotStrings = ["Beep!","Boop!","Won't you be my neighbor?"]
@@ -27,4 +23,10 @@ function robotizeTheNumber (numInput) {
       return robotStrings[(x-1)];
     }
   }
+  let comboStr = "";
+  for (i = 0; i <= parseInt(numInput); i++) {
+    comboStr = "0";
+  }
+  return comboStr;
+
 }
