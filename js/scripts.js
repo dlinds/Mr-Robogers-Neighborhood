@@ -1,5 +1,17 @@
+// Utility Logic
+
+function checkNumberPresence (fullNumber, numToFind) {
+  const numArray = fullNumber.split("");  
+  for (i = 0; i < numArray.length; i++) {   //check to see if numToFind is present
+    if (parseInt(numArray[i]) === numToFind) {
+      return true;
+    } 
+  } return false; //if for loop doesn't find number, return false
+}
+
 // Business Logic
 function robotizeTheNumber (numInput) {
+
   if (isNaN(numInput)) {
     return false; //if not a valid number
   }
@@ -7,27 +19,12 @@ function robotizeTheNumber (numInput) {
   if (parseInt(numInput) < 0) {
     return false; //if less than 0, return false
   }
-
-  const numArray = numInput.split(""); //split into an array of strings
   
-  //first, check and see if there are any 3s
-  for (i = 0; i < numArray.length; i++) {
-    if (parseInt(numArray[i]) === 3) {
-      return "Won't you be my neighbor?";
-    }
-  }
-
-  //next, check and see if there are any 2s
-  for (i = 0; i < numArray.length; i++) {
-    if (parseInt(numArray[i]) === 2) {
-      return "Boop!";
-    }
-  }
-
-  //next, check and see if there are any 1s
-  for (i = 0; i < numArray.length; i++) {
-    if (parseInt(numArray[i]) === 1) {
-      return "Boop!";
+  const robotStrings = ["Beep!","Boop!","Won't you be my neighbor?"]
+  
+  for (x = 3; x > 0; x--) {
+    if (checkNumberPresence(numInput, x)) {
+      return robotStrings[(x-1)];
     }
   }
 }

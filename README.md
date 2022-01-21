@@ -65,8 +65,18 @@ Code:
 const userNum = "9587698576958719";  
 robotizeTheNumber(userNum);  
 Expected Output: "Beep!"  
+ 
+  
+#### Describe: checkNumberPresence()
 
-
+Test: "It should return true if second input is present in first input"  
+Code:  
+const numToSearch = "95876985769584719";
+const numToFind = 4;
+checkNumberPresence(numToSearch,numToFind);  
+Expected Output: true  
+  
+  
 ## Known Bugs
 
 * _Nothing known yet_
