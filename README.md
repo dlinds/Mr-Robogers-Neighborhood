@@ -32,12 +32,18 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 #### Describe: robotizeTheNumber()
 
-Test: "It should return false if a non-number is input"
-Code:
-const userNum = "283a47329874234";
-robotizeTheNumber(userNum);
-Expected Output: false
-
+Test: "It should return false if a non-number is input"  
+Code:  
+const userNum = "283a47329874234";  
+robotizeTheNumber(userNum);  
+Expected Output: false  
+  
+  
+Test: "It should return false if a number is less than 0"  
+Code:  
+const userNum = "-2";  
+robotizeTheNumber(userNum);  
+Expected Output: false  
 
 ## Known Bugs
 
