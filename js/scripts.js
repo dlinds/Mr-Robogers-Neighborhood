@@ -41,8 +41,22 @@ function robotizeTheNumber (numInput) {
 $(document).ready(function() {
 	$("form#ask-the-robot").submit(function(event) {
     event.preventDefault();
-    $("#robot-paragraph").text(robotizeTheNumber($("#user-input").val()));
+    $("#robot-paragraph").text($("#user-input").val()+ ": " + robotizeTheNumber($("#user-input").val()));
+    $("#robot-head-img").attr("src", "../img/robot-talk.jpg");
     $("#user-input").val("");
-})
+  });
+
+  $("#toggle-mouth").click(function() {
+    if ($("#robot-head-img").attr("src") === "img/robot-not-talking.png") {
+      $("#robot-head-img").attr("src", "img/robot-talk.jpg");
+      $("#toggle-mouth").text("Close my Mouth");
+    } else if ($("#robot-head-img").attr("src") === "img/robot-talk.jpg") {
+      $("#robot-head-img").attr("src", "img/robot-not-talking.png");
+      $("#toggle-mouth").text("Open my Mouth");
+    }
+  });
 
 });
+
+
+//$("#language-suggestion-img").attr("src", "src here");

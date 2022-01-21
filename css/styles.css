@@ -1,3 +1,10 @@
 #robot-container {
   padding-top: 30px;
 }
+
+#robot-head-img {
+  max-width: 100%;
+}
+#robot-paragraph {
+  padding-top: 200px;
+}

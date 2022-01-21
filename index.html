@@ -9,16 +9,22 @@
 </head>
 <body>
   <div class="container" id="robot-container">
-    <form id="ask-the-robot">
-      <div class="form-group">
-        <label for="user-input">Please input a number!</label>
-        <input id="user-input" class="form-control" placeholder="123">
+    <div class="row" id="robot-results">
+      <div class=col-4>
+        <img src="img/robot-not-talking.png" id="robot-head-img" alt="image of a robot head">
+        <div class="btn btn-dark btn-lg" id="toggle-mouth">open my mouth</div>
       </div>
-      <button class="btn btn-dark">Submit</button>
-    </form>
-    <div id="robot-results">
-      <p id="robot-paragraph"></p>
-    </div>
+      <div class=col-8>
+        <form id="ask-the-robot">
+          <div class="form-group">
+            <label for="user-input">Would you like me to count for you?</label>
+            <input id="user-input" class="form-control" placeholder="Please enter a number">
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+        <p id="robot-paragraph"></p>
+     </div>
+   </div>
   </div>
 </body>
 </html>
