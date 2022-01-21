@@ -48,9 +48,18 @@ Expected Output: false
   
 Test: "It should return string "Won't you be my neighbor?" if number input contains a 3"  
 Code:  
-const userNum = "9587698357695879";  
+const userNum = "95872698357695879";  
 robotizeTheNumber(userNum);  
 Expected Output: "Won't you be my neighbor?"  
+  
+  
+Test: "It should return string "Boop!" if number input contains a 2 and no 3 is present"  
+Code:  
+const userNum = "9587698576295879";  
+robotizeTheNumber(userNum);  
+Expected Output: "Boop!"  
+
+
 
 ## Known Bugs
 
