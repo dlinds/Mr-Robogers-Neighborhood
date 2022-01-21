@@ -16,7 +16,7 @@ function robotizeTheNumber (numInput) {
     return false; //if not a valid number
   }
   
-  const robotStrings = ["Beep!","Boop!","Won't you be my neighbor?"]
+  const robotStrings = ["Beep!","Boop","Won't you be my neighbor?"]
   
   for (x = 3; x > 0; x--) {
     if (checkNumberPresence(numInput, x)) {
@@ -25,8 +25,20 @@ function robotizeTheNumber (numInput) {
   }
   let comboStr = "";
   for (i = 0; i <= parseInt(numInput); i++) {
-    comboStr = "0";
+    if (parseInt(numInput) === 0) {
+      comboStr = "0";
+      break;
+    } else {
+      if (i !== parseInt(numInput)) {
+        if (i === 1 || i === 2 || i === 3) {
+          comboStr += robotStrings[(i-1)] + ", ";
+        } else {
+          comboStr += i + ", ";
+        }
+      } else {
+          comboStr += i;
+        }
+      }
   }
   return comboStr;
-
 }
