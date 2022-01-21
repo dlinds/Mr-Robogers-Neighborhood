@@ -17,8 +17,16 @@
       <div class=col-8>
         <form id="ask-the-robot">
           <div class="form-group">
-            <label for="user-input">Would you like me to count for you?</label>
-            <input id="user-input" class="form-control" placeholder="Please enter a number" required>
+            <div class="row">
+              <div class="col-6">
+                <label for="user-input">Would you like me to count for you?</label>
+                <input id="user-input" class="form-control" placeholder="Please enter a number" required>
+              </div>
+              <div class="col-6">
+                <label for="name-input">Optionally, provide your name below</label>
+                <input id="name-input" class="form-control" placeholder="Name">
+              </div>
+            </div>
           </div>
           <button type="submit" class="btn btn-dark">Submit</button>
         </form>

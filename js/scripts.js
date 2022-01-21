@@ -23,7 +23,6 @@ function robotizeTheNumber (numInput) {
       return numCombo; //returns the corresponding string in robotStrings
     }
   }
-
   //if no 3, 2, or 1 is present, the below runs. It counts up from 0 to the number input, replacing 0, 1, 2, and 3 as it
   //counts with the corresponding string for each number from robotStrings[];
   for (i = 0; i <= parseInt(numInput); i++) {
@@ -44,7 +43,6 @@ $(document).ready(function() {
     numArray = robotizeTheNumber($("#user-input").val());
 
     if (numArray === false) {
-      console.log(numArray);
       $("#robot-paragraph").html("Please enter a <b>number</b>, that is also <b>greater than 0</b>.").show('slow');
     } else {
       numArray.forEach(function (numOut, index) {
@@ -65,15 +63,15 @@ $(document).ready(function() {
     $("#robot-head-img").attr("src", "img/robot-not-talking.png");
     $("#toggle-mouth").text("Open my mouth");    
     $("#robot-paragraph").hide( 1000 , function () {
-      $("#robot-paragraph").text("s");
+      $("#robot-paragraph").text("");
     });
   });
 
   $("div#toggle-mouth").click(function() {
-    if ($("#toggle-mouth").text() ==  "Open my mouth") {
+    if ($("#toggle-mouth").text() === "Open my mouth") {
       $("#robot-head-img").attr("src", "img/robot-talk.jpg");
       $("#toggle-mouth").text("Close my mouth");
-    } else if ($("#toggle-mouth").text() ==  "Close my mouth") {
+    } else if ($("#toggle-mouth").text() === "Close my mouth") {
       $("#robot-head-img").attr("src", "img/robot-not-talking.png");
       $("#toggle-mouth").text("Open my mouth");
     }
