@@ -1,15 +1,48 @@
 #robot-container {
-  padding-top: 30px;
+  border: 1px solid #dfdfdf;
+  border-top: 0px;
+  background-color: #fbfbfb;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 55%);
+  padding: 30px;
 }
-
+#top-row {
+  text-align: center;
+  box-shadow: 0 15px 15px rgb(0 0 0 / 5%);
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+#robot-form-container {
+  margin-top: 30px;
+  box-shadow: 0 -15px 15px rgb(0 0 0 / 5%);
+  padding-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#robot-head-column {
+  border-right: 1px solid #eaeaea;
+}
 #robot-head-img {
   max-width: 100%;
 }
 #robot-paragraph {
-  padding-top: 25%;
+  padding-top: 23%;
   display: none;
+}
+@media (max-width: 992px) {
+  #robot-paragraph {
+    padding-top: 10%;
+    display: none;
+  }
 }
 
 #toggle-mouth {
   width: 100%;
+  margin-top:2px;
+}
+
+#reset-tip {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  display: none;
 }

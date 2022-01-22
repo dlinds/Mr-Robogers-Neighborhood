@@ -9,26 +9,25 @@
 </head>
 <body>
   <div class="container" id="robot-container">
-    <div class="row" id="robot-results">
-      <div class=col-4>
+    <div id="top-row">
+      <h1 class="heading-1">Welcome</h1>
+      <p>Welcome to the robot counter game!</p>
+      <p>Enter in a valid, non-negative number below, and Robo the robot will beep boop it back at you!</p>
+    </div>
+    <hr>
+    <div class="row" id="robot-form-container">
+      <div class="col-4" id="robot-head-column">
         <img src="img/robot-not-talking.png" id="robot-head-img" alt="image of a robot head">
         <div class="btn btn-dark btn-lg" id="toggle-mouth">Open my mouth</div>
+        <div id="reset-tip">If you'd like to reset the form, click back into the number text box</div>
       </div>
       <div class=col-8>
         <form id="ask-the-robot">
           <div class="form-group">
-            <div class="row">
-              <div class="col-6">
-                <label for="user-input">Would you like me to count for you?</label>
-                <input id="user-input" class="form-control" placeholder="Please enter a number" required>
-              </div>
-              <div class="col-6">
-                <label for="name-input">Optionally, provide your name below</label>
-                <input id="name-input" class="form-control" placeholder="Name">
-              </div>
-            </div>
+            <label for="user-input">Enter a number!</label>
+            <input id="user-input" class="form-control" placeholder="Please enter a number" required>
           </div>
-          <button type="submit" class="btn btn-dark">Submit</button>
+          <button type="submit" class="btn btn-dark">Count It, Robo!</button>
         </form>
         <div id="robot-paragraph"></div>
      </div>
