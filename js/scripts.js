@@ -43,7 +43,7 @@ $(document).ready(function() {
     numArray = robotizeTheNumber($("#user-input").val());
 
     if (numArray === false) {
-      $("#robot-paragraph").html("Please enter a <b>number</b>, that is also <b>greater than 0</b>.").show('slow');
+      $("#robot-paragraph").html("We are still training Robo the Robot! In order to make sure his AI is trained correctly, please enter a valid <b>number</b>, and please make sure that is also <b>greater than 0</b>.").show('slow');
     } else {
       numArray.forEach(function (numOut, index) {
         if (index < (numArray.length - 1)) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
       });
     }
 
-    $("#robot-head-img").attr("src", "img/robot-talk.jpg");
+    $("#robot-head-img").attr("src", "img/robot-talk.png");
     $("#toggle-mouth").text("Close my mouth");
     $("#reset-tip").slideDown("slow");
     $("#user-input").val("");
@@ -64,14 +64,14 @@ $(document).ready(function() {
     $("#robot-head-img").attr("src", "img/robot-not-talking.png");
     $("#toggle-mouth").text("Open my mouth");
     $("#reset-tip").slideUp("slow");
-    $("#robot-paragraph").hide( 1000 , function () {
+    $("#robot-paragraph").hide( 200 , function () {
       $("#robot-paragraph").text("");
     });
   });
 
   $("div#toggle-mouth").click(function() {
     if ($("#toggle-mouth").text() === "Open my mouth") {
-      $("#robot-head-img").attr("src", "img/robot-talk.jpg");
+      $("#robot-head-img").attr("src", "img/robot-talk.png");
       $("#toggle-mouth").text("Close my mouth");
       $("#reset-tip").slideDown("fast");
     } else if ($("#toggle-mouth").text() === "Close my mouth") {

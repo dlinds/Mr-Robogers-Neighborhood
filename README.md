@@ -2,35 +2,54 @@
 
 #### By _**Daniel Lindsey**_
 
-#### _An application that will replace certain numbers with strings_
+#### _An application that will replace certain numbers with strings_  
+  
+<br>
 
-## Technologies Used
+# Technologies Used
 
-* _JavaScript_
 * _HTML_
 * _CSS_
-* _Markdown_
+* _Bootstrap_
+* _JavaScript_
 * _jQuery_
+* _Markdown_
 
-## Description
+<br>
 
-_When a user inputs a number, the program will return a list of values starting at 0, but replacing 1, 2, and 3 (if the number input is higher than either of these) with separate strings corresponding for each number. If the number is 4 or higher, 4 and any proceeding numbers will be lest as integers._
+# Description
 
-## Setup/Installation Requirements
----
+When a user inputs a number, the robot will message a set of values based on what digits are in the number. If the inputted number contains a 3, 2, or 1, corresponding strings will be returned for each (with 3 taking priority over 2, and 2 over 1). If the number is not 3, 2, or 1, the robot will output a string counting from 0 up to the inputted number, replacing 3, 2, and 1 with their corresponding strings. For example,  
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+**_INPUT_**: &nbsp; 8  
+**_OUTPUT_**: &nbsp; 0, Beep!, Boop, Won't you be my neighbor?, 4, 5, 6, 7, 8
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+<br>
 
----
-## Tests
+# Setup/Installation Requirements
 
-#### Describe: robotizeTheNumber()
+
+There are two options for running the application
+* ### GitHub Pages  
+    To view a live version of this project, please navigate to the following site:  
+    https://dlinds.github.io/Mr-Robogers-Neighborhood/
+
+* ### Cloning the repository  
+    Alternativly, you can clone/download the repository from Github. To do so,  
+    
+    1. Click the green Code button in the top right of the repository
+    2. Choose Download ZIP
+    3. Navigate to your Downloads folder, and extract the contents to your desktop
+    4. Double click to open index.html
+    5. You should now be viewing the page in your browser.
+
+<br>
+  
+# Tests
+  
+  
+## Describe: robotizeTheNumber()
+
 
 Test: "It should return false if no number is input"  
 Code:  
@@ -88,20 +107,24 @@ robotizeTheNumber(userNum);
 Expected Output: ["0", "Beep!", "Boop", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
  
   
-  
-#### Describe: checkNumberPresence()
+  <br>
+
+## Describe: checkNumberPresence()
 
 Test: "It should return true if second input is present in first input"  
 Code:  
-const numToSearch = "95876985769584719";
-const numToFind = 4;
+const numToSearch = "95876985769584719";  
+const numToFind = 4;  
 checkNumberPresence(numToSearch,numToFind);  
 Expected Output: true  
   
-  
+<br>
+
 ## Known Bugs
 
-* _Nothing known yet_
+* _There are no known bugs at this time. If you happen to find one, or get a response that is unexpected, please message me on Github!_
+
+<br>
 
 ## License
 
