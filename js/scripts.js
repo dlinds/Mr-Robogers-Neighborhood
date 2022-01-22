@@ -40,6 +40,7 @@ function robotizeTheNumber (numInput) {
 $(document).ready(function() {
 	$("form#ask-the-robot").submit(function(event) {
     event.preventDefault();
+    $("#robot-paragraph").text('');
     numArray = robotizeTheNumber($("#user-input").val());
 
     if (numArray === false) {
