@@ -56,6 +56,7 @@ $(document).ready(function() {
 
     $("#robot-head-img").attr("src", "img/robot-talk.png");
     $("#toggle-mouth").text("Close my mouth");
+    $("#toggle-mouth").slideDown("slow");
     $("#reset-tip").slideDown("slow");
     $("#user-input").val("");
   });
@@ -69,7 +70,7 @@ $(document).ready(function() {
     });
   });
 
-  $("div#toggle-mouth").click(function() {
+  $("#toggle-mouth").click(function() {
     if ($("#toggle-mouth").text() === "Open my mouth") {
       $("#robot-head-img").attr("src", "img/robot-talk.png");
       $("#toggle-mouth").text("Close my mouth");
