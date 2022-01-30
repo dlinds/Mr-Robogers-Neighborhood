@@ -72,35 +72,14 @@ robotizeTheNumber(userNum);
 Expected Output: false  
   
   
-Test: "It should return string "Won't you be my neighbor?" if number input contains a 3"  
-Code:  
-const userNum = "958726983576951879";  
-robotizeTheNumber(userNum);  
-Expected Output: "Won't you be my neighbor?"  
-  
-  
-Test: "It should return string "Boop" if number input contains a 2 and no 3 is present"  
-Code:  
-const userNum = "9587698576295879";  
-robotizeTheNumber(userNum);  
-Expected Output: "Boop"  
-  
-  
-Test: "It should return string "Beep!" if number input contains a 1 and no 3 or 2 is present"  
-Code:  
-const userNum = "9587698576958719";  
-robotizeTheNumber(userNum);  
-Expected Output: "Beep!"  
-  
-  
-Test: "It should return string "0" if number input is 0 and no 3, 2, 1 is present"  
+Test: "It should return string "0" if number input is 0"  
 Code:  
 const userNum = "0";  
 robotizeTheNumber(userNum);  
 Expected Output: "0"  
   
   
-Test: "It should return array counting up to number from 0, replacing 3,2,1 with specific string for each"  
+Test: "It should return array counting up to number from 0, replacing numbers containing 3,2,1 with specific string for each"  
 Code:  
 const userNum = "77";  
 robotizeTheNumber(userNum);  
@@ -113,8 +92,8 @@ Expected Output: ["0", "Beep!", "Boop", "Won't you be my neighbor?", 4, 5, 6, 7,
 
 Test: "It should return true if second input is present in first input"  
 Code:  
-const numToSearch = "95876985769584719";  
-const numToFind = 4;  
+const numToSearch = "42";  
+const numToFind = 2;  
 checkNumberPresence(numToSearch,numToFind);  
 Expected Output: true  
   
